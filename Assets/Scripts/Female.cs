@@ -7,16 +7,17 @@ public class Female : MonoBehaviour {
 	void Start () {
 	
 	}
-
-    // Update is called once per frame
-    /*void Update () {
 	
-	}*/
+	// Update is called once per frame
+	void Update () {
+	}
 
-    //プレイヤーに当たったら消える
-    //Garlicのほうと同じで、これだとどのオブジェクトに当たっても消えてしまうので作り直します
+    //プレイヤーに当たると消える
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if(other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
