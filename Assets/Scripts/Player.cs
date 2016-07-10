@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
 
 		//カメラの位置取得
 		Vector3 cameraPos = m_mainCamera.transform.position;
-		//Playerの位置から右に4つ移動した位置を画面中央に
+		//Playerの位置から4つ移動した位置を画面中央に
 		cameraPos.x = transform.position.x + 1;
 		cameraPos.y = transform.position.y + 1;
 		m_mainCamera.transform.position = cameraPos;
@@ -92,5 +92,13 @@ public class Player : MonoBehaviour {
 		}
 
 	}
-	
+
+    //にんにくに当たるとプレイヤーが消える
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Garlic")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
