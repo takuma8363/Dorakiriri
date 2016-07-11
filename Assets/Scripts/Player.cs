@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;       //シーン遷移に使用
 
 public class Player : MonoBehaviour {
 
@@ -93,12 +94,16 @@ public class Player : MonoBehaviour {
 
 	}
 
-    //にんにくに当たるとプレイヤーが消える
+    //障害物に当たったときの処理
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Garlic")
+        if (other.tag == "Garlic" || other.tag == "Cross")
         {
-            Destroy(gameObject);
+            //プレイヤーが消える
+            //Destroy(gameObject);
+
+            //タイトルシーンに遷移
+            SceneManager.LoadScene("Title");
         }
     }
 }
