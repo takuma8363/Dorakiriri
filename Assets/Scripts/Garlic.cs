@@ -13,12 +13,12 @@ public class Garlic : MonoBehaviour {
 	
 	}
 
-    //プレイヤーに当たるとにんにくも消えるように
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
-    }
+	//プレイヤーに当たると一緒に消え,地面に当たっても消える
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Player" || other.tag == "Ground")
+		{
+			Destroy(gameObject);
+		}
+	}
 }
