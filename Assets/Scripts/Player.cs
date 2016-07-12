@@ -94,16 +94,14 @@ public class Player : MonoBehaviour {
 
 	}
 
-    //障害物に当たったときの処理
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Garlic" || other.tag == "Cross")
-        {
-            //プレイヤーが消える
-            //Destroy(gameObject);
-
-            //タイトルシーンに遷移
-            SceneManager.LoadScene("Title");
-        }
-    }
+	//障害物に当たった時の処理
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Garlic" || other.tag == "Cross") 
+		{
+			//タイトルシーンに遷移
+			SceneManager.LoadScene ("Gameover");
+		}
+	}
+	
 }

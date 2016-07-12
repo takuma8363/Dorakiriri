@@ -10,14 +10,15 @@ public class Female : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 	}
 
-    //プレイヤーに当たると消える
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
-    }
+	//プレイヤーに当たると消える
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Player") 
+		{
+			Destroy(gameObject);
+		}
+	}
 }
